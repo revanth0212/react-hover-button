@@ -1,18 +1,31 @@
 import './App.css'
 
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+
+import HoverButton from './HoverButton'
 
 class App extends Component {
   render() {
-    return <div className="App">
-      <div className="App-heading App-flex">
-        <h2>Welcome to <span className="App-react">React</span></h2>
+    return (
+      <div className="App">
+        <HoverButton
+          node={<div>Main Button</div>}
+          options={[
+            { node: <div>Button 1</div> },
+            { node: <div>Button 2</div> },
+            { node: <div>Button 3</div> },
+            {
+              node: (
+                <HoverButton
+                  node={<div>Button 4</div>}
+                  options={[{ node: <div>Button 4.1</div> }, { node: <div>Button 4.2</div> }]}
+                />
+              )
+            }
+          ]}
+        />
       </div>
-      <div className="App-instructions App-flex">
-        <img className="App-logo" src={require('./react.svg')}/>
-        <p>Edit <code>src/App.js</code> and save to hot reload your changes.</p>
-      </div>
-    </div>
+    )
   }
 }
 

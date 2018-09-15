@@ -2,7 +2,7 @@
   "name": "react-hover-button",
   "version": "1.0.0",
   "description": "Describe react-hover-button here",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "nwb build-react-app",
     "clean": "nwb clean-app",
@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "react": "^16.5.1",
-    "react-dom": "^16.5.1"
+    "react-dom": "^16.5.1",
+    "recompose": "^0.30.0"
   },
   "devDependencies": {
     "nwb": "0.23.x"
