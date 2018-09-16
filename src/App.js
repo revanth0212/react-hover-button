@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import TextExample from './Examples/TextExample'
 import HierarchyExample from './Examples/HierarchyExample'
+import IconsExample from './Examples/IconsExmaple'
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div>
         <TextExample />
         <HierarchyExample />
+        <IconsExample />
       </div>
     )
   }
