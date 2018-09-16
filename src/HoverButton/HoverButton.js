@@ -1,11 +1,15 @@
 import React from 'react'
 
-const Option = ({ option }) => <div style={{ padding: '0px 5px' }}>{option.node}</div>
+const defaultRootNodeStyle = { display: 'flex' }
 
-const Options = ({ options }) => (
-  <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}>
+const defaultOptionsStyle = { display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }
+
+const Option = ({ option, style }) => <div style={style}>{option.node}</div>
+
+const Options = ({ options, style = defaultOptionsStyle, optionStyle }) => (
+  <div style={style}>
     {options.map(option => (
-      <Option option={option} />
+      <Option option={option} style={optionStyle} />
     ))}
   </div>
 )
@@ -27,14 +31,14 @@ class HoverButton extends React.Component {
   }
 
   render() {
-    const { node, options } = this.props
+    const { node, options, rootStyle, optionsStyle, optionStyle } = this.props
     const { showOptions } = this.state
     return (
-      <div>
-        <div onClick={this.onClick} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}>
+      <div style={{ width: 'fit-content', ...rootStyle }}>
+        <div onClick={this.onClick} style={defaultRootNodeStyle}>
           {node}
         </div>
-        {showOptions && <Options options={options} />}
+        {showOptions && <Options options={options} optionStyle={optionStyle} style={optionsStyle} />}
       </div>
     )
   }
