@@ -13,7 +13,7 @@ export default () => (
         { node: <Text text="Button 2" /> },
         { node: <Text text="Button 3" /> }
       ]}
-      rootStyle={{ display: 'flex', backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+      rootStyle={{ display: 'flex', backgroundColor: 'rgba(0, 0, 0, 0.7)', padding: '7px' }}
       optionStyle={{ padding: '0px 5px' }}
       optionsStyle={{ display: 'flex' }}
     />

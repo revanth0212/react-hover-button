@@ -1,22 +1,22 @@
 import React from 'react'
 
 import HoverButton from '../HoverButton'
-import Text from './Text'
+import Icon from './Icon'
 
 export default () => (
   <div>
-    <h3>Hierarchy</h3>
+    <h3>Hierarchy of Icons</h3>
     <HoverButton
-      node={<Text text="Main Button" />}
+      node={<Icon className="fas fa-share" />}
       options={[
-        { node: <Text text="Button 1" /> },
-        { node: <Text text="Button 2" /> },
-        { node: <Text text="Button 3" /> },
+        { node: <Icon className="fab fa-facebook-f" /> },
+        { node: <Icon className="fab fa-twitter" /> },
+        { node: <Icon className="fab fa-linkedin-in" /> },
         {
           node: (
             <HoverButton
-              node={<Text text="Button 4" />}
-              options={[{ node: <Text text="Button 4.1" /> }, { node: <Text text="Button 4.2" /> }]}
+              node={<Icon className="fas fa-ellipsis-h" />}
+              options={[{ node: <Icon className="far fa-envelope" /> }, { node: <Icon className="fas fa-link" /> }]}
               rootStyle={{ display: 'block' }}
               optionStyle={{ padding: '0px 5px' }}
               optionsStyle={{ display: 'block' }}
