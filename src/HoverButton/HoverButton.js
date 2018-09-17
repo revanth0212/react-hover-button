@@ -15,8 +15,15 @@ const Options = ({ options, style = defaultOptionsStyle, optionStyle }) => (
 )
 
 class HoverButton extends React.Component {
-  state = {
+  static defaultProps = {
     showOptions: false
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      showOptions: props.showOptions
+    }
   }
 
   setComponentState = newState => {
